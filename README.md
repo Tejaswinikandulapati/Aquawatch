@@ -1,89 +1,268 @@
-# AquaWatch - Smart Aquaculture Management System
+# AquaWatch – Smart Aquaculture Management System
 
-Full-stack app: React (frontend) + FastAPI (backend) + MySQL (database).
-Ready to run with **Docker** — no manual MySQL setup, no password issues.
+AquaWatch is a web-based Smart Aquaculture Management System developed to help fish farmers monitor and manage aquaculture ponds efficiently. It provides a centralized platform for monitoring pond conditions, water quality, feeding activities, alerts, environmental conditions, analytics, and reports.
 
-## Prerequisites (one time only)
+## Features
 
-Install **Docker Desktop**: https://www.docker.com/products/docker-desktop/
-(Just install it and open it once so Docker is running in the background.)
+- Smart aquaculture dashboard
+- Pond management
+- Water quality monitoring
+- Temperature monitoring
+- Dissolved Oxygen monitoring
+- pH monitoring
+- Ammonia monitoring
+- Active alerts and alert management
+- Feeding logs and analysis
+- Water quality score
+- Temperature, pH, and oxygen trends
+- Weather information
+- Analytics and reports
+- Automatic data refresh
+- Modern responsive user interface
 
-## How to run (1 command)
+## Technology Stack
 
-Open terminal inside the `aquawatch` folder and run:
+### Frontend
+- React.js
+- JavaScript
+- React Router
+- React Icons
+- Recharts
+- Framer Motion
+- HTML5
+- CSS3
 
-```
-docker-compose up --build
-```
+### Backend
+- Python
+- FastAPI
+- SQLAlchemy
+- REST API
 
-Wait ~1-2 minutes on the very first run (downloading images + installing packages).
-After that, next time you run it, it starts in a few seconds.
+### Database
+- SQLite
 
-## Once it's running
+## Project Structure
 
-- Frontend (dashboard): http://localhost:3000
-- Backend API docs: http://localhost:8000/docs
-- MySQL: exposed on port 3307 (in case you want to connect with a MySQL client)
-
-Seed data (3 ponds, sensor readings, alerts, feeding logs) loads automatically —
-dashboard won't be empty on first open.
-
-## To stop
-
-Press `Ctrl + C` in the terminal, then run:
-
-```
-docker-compose down
-```
-
-To stop AND wipe the database (fresh start next time):
-
-```
-docker-compose down -v
-```
-
-## Project structure
-
-```
-aquawatch/
-├── docker-compose.yml     <- one file that runs everything
+```text
+AquaWatch/
 ├── backend/
-│   ├── main.py             <- FastAPI routes
-│   ├── models.py           <- DB tables (SQLAlchemy)
-│   ├── schemas.py          <- request/response validation
-│   ├── database.py         <- DB connection
-│   ├── init.sql            <- schema + seed data (auto-loads into MySQL)
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── schemas.py
 │   ├── requirements.txt
-│   └── Dockerfile
-└── frontend/
-    ├── src/
-    │   ├── App.js           <- dashboard UI (dark ocean theme)
-    │   └── index.js
-    ├── public/index.html
-    ├── package.json
-    └── Dockerfile
-```
+│   └── init.sql
+│
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   ├── package.json
+│   └── package-lock.json
+│
+├── .gitignore
+└── README.md
 
-## Features included
+Installation and Setup
 
-- Pond management (name, location, species, area)
-- Live sensor readings: temperature, pH, dissolved oxygen, ammonia
-- "Simulate Reading" button per pond (great for demo/viva — generates a realistic reading instantly)
-- Automatic alert generation when a reading crosses a safe threshold (pH, low oxygen, high ammonia)
-- Resolve alerts from the dashboard
-- Feeding logs (feed type, quantity, notes)
-- Dashboard summary cards (total ponds, active alerts, average temp, average dissolved O₂)
-- Auto-refreshes every 8 seconds
+Prerequisites
 
-## If something doesn't work
+Make sure the following are installed:
 
-**"port already in use" error** → something else on your machine is using port 3000, 8000, or 3307.
-Stop that other app, or tell me and I'll change the ports for you.
+Python 3.x
 
-**Docker not installed / not running** → open Docker Desktop app first, wait till it says "running", then try the command again.
+Node.js
 
-**Want to add a real ESP32/Arduino sensor feed later?**
-Point your device to `POST http://localhost:8000/api/readings` with JSON:
-```json
-{ "pond_id": 1, "temperature": 28.5, "ph": 7.6, "dissolved_oxygen": 5.1, "ammonia": 0.3 }
-```
+npm
+
+Git
+
+VS Code
+
+
+Step 1: Clone the Repository
+
+git clone https://github.com/Tejaswinikandulapati/Aquawatch.git
+cd Aquawatch
+
+Step 2: Backend Setup
+
+Open the terminal and run:
+
+cd backend
+
+Install Python dependencies:
+
+pip install -r requirements.txt
+
+Install PyMySQL if required:
+
+python -m pip install PyMySQL
+
+Start the FastAPI backend:
+
+uvicorn main:app --reload
+
+Backend URL:
+
+http://127.0.0.1:8000
+
+FastAPI documentation:
+
+http://127.0.0.1:8000/docs
+
+Step 3: Frontend Setup
+
+Open another terminal and go to the frontend folder:
+
+cd frontend
+
+Install frontend dependencies:
+
+npm install
+
+Start the React application:
+
+npm start
+
+Frontend URL:
+
+http://localhost:3000
+
+Step 4: Run the Application
+
+Keep both terminals running:
+
+Backend  → http://127.0.0.1:8000
+Frontend → http://localhost:3000
+
+Open the frontend URL in your browser to use AquaWatch.
+
+API Endpoints
+
+The frontend communicates with the FastAPI backend using REST APIs.
+
+/api/ponds
+/api/readings
+/api/alerts
+/api/feeding-logs
+/api/dashboard-summary
+/api/simulate/{pond_id}
+/api/alerts/{alert_id}/resolve
+
+Dashboard
+
+The dashboard displays:
+
+Total Ponds
+
+Active Alerts
+
+Average Temperature
+
+Dissolved Oxygen
+
+pH Level
+
+Water Quality Score
+
+Temperature Trend
+
+pH Trend
+
+Dissolved Oxygen Trend
+
+Weekly Feeding Analysis
+
+Pond Overview
+
+Weather Information
+
+Environmental Summary
+
+
+Water Quality Monitoring
+
+AquaWatch monitors important water-quality parameters such as:
+
+Temperature
+
+pH
+
+Dissolved Oxygen
+
+Ammonia
+
+
+This helps users understand pond conditions and identify potential problems.
+
+Alert Management
+
+The system displays active alerts when important pond or water-quality conditions require attention. Users can view and resolve alerts through the application.
+
+Feeding Management
+
+The feeding module allows users to view feeding records and analyze feeding activities.
+
+Analytics
+
+The system provides charts and trends to help users understand aquaculture data and make better management decisions.
+
+Objective
+
+The main objective of AquaWatch is to provide a simple, centralized, and user-friendly platform for managing aquaculture operations. It reduces manual monitoring and helps fish farmers make better decisions using digital data.
+
+Benefits
+
+Easy pond monitoring
+
+Centralized aquaculture information
+
+Better water-quality management
+
+Quick identification of problems
+
+Easy feeding management
+
+Visual data analysis
+
+Reduced manual work
+
+Better decision making
+
+
+Future Enhancements
+
+IoT sensor integration
+
+Real-time sensor monitoring
+
+Mobile application
+
+AI-based fish health prediction
+
+Cloud deployment
+
+Advanced analytics
+
+Email and SMS notifications
+
+Automated feeding system
+
+
+Project Information
+
+Project Name: AquaWatch – Smart Aquaculture Management System
+
+Project Type: Web-Based Application
+
+Frontend: React.js
+
+Backend: FastAPI
+
+Database: SQLite
+
+Programming Languages: Python and JavaScript
+
+Conclusion
+
+AquaWatch provides a modern and user-friendly solution for smart aquaculture management. It combines pond monitoring, water-quality analysis, feeding management, alerts, analytics, and reporting into one centralized platform, helping aquaculture farmers monitor their operations efficiently and make better decisions.
