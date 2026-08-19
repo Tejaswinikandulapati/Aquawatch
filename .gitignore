@@ -1,0 +1,7 @@
+aquawatch.db
+node_modules/
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
