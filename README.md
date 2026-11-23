@@ -1,268 +1,198 @@
-# AquaWatch – Smart Aquaculture Management System
+🌊 AquaWatch – Smart Aquaculture Management System
 
-AquaWatch is a web-based Smart Aquaculture Management System developed to help fish farmers monitor and manage aquaculture ponds efficiently. It provides a centralized platform for monitoring pond conditions, water quality, feeding activities, alerts, environmental conditions, analytics, and reports.
+<p align="center">
+  <img src="https://img.shields.io/badge/Project-AquaWatch-00A6A6?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/React-Frontend-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+  <img src="https://img.shields.io/badge/Python-Backend-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/FastAPI-API-009688?style=for-the-badge&logo=fastapi&logoColor=white" />
+  <img src="https://img.shields.io/badge/Deployment-Render-46E3B7?style=for-the-badge&logo=render&logoColor=black" />
+</p><h3 align="center">🐟 Smart Monitoring | 💧 Water Quality | 📊 Better Aquaculture</h3>---
 
-## Features
+🌟 About the Project
 
-- Smart aquaculture dashboard
-- Pond management
-- Water quality monitoring
-- Temperature monitoring
-- Dissolved Oxygen monitoring
-- pH monitoring
-- Ammonia monitoring
-- Active alerts and alert management
-- Feeding logs and analysis
-- Water quality score
-- Temperature, pH, and oxygen trends
-- Weather information
-- Analytics and reports
-- Automatic data refresh
-- Modern responsive user interface
+AquaWatch is a Smart Aquaculture Management System developed to simplify fish pond monitoring and management through a centralized web application.
 
-## Technology Stack
+The platform helps users monitor pond information, track water quality readings, manage feeding activities, and view important alerts through an interactive dashboard.
 
-### Frontend
-- React.js
-- JavaScript
-- React Router
-- React Icons
-- Recharts
-- Framer Motion
-- HTML5
-- CSS3
+🎯 Project Goal: To provide a convenient digital solution for monitoring and managing aquaculture activities efficiently.
 
-### Backend
-- Python
-- FastAPI
-- SQLAlchemy
-- REST API
+---
 
-### Database
-- SQLite
+🚀 Live Application
 
-## Project Structure
+🌐 Live Demo: "Open AquaWatch" (ADD_YOUR_FRONTEND_URL_HERE)
 
-```text
-AquaWatch/
+🔗 GitHub Repository: "View Source Code" (https://github.com/Tejaswinikandulapati/Aquawatch)
+
+⚙️ Backend API: "Open Backend" (https://aquawatch-backend-7w7k.onrender.com)
+
+📖 API Documentation: "Explore API Docs" (https://aquawatch-backend-7w7k.onrender.com/docs)
+
+---
+
+✨ Key Features
+
+Feature| Description
+📊 Dashboard| Centralized overview of aquaculture activities
+🐟 Pond Management| View and manage pond information
+💧 Water Quality Monitoring| Track water quality information
+🌡️ Sensor Readings| Monitor and review sensor readings
+🍽️ Feeding Management| Maintain feeding activity records
+🚨 Alert Management| View important pond-related alerts
+📈 Analytics & Reports| Review monitoring information
+
+---
+
+🛠️ Technology Stack
+
+🎨 Frontend
+
+- ⚛️ React.js
+- 💻 JavaScript
+- 🎨 CSS
+- 🔀 React Router
+- 📊 Recharts
+
+⚙️ Backend
+
+- 🐍 Python
+- ⚡ FastAPI
+- 🚀 Uvicorn
+- 📦 Pydantic
+
+☁️ Deployment & Tools
+
+- 🐙 GitHub
+- ☁️ Render
+- 🔗 REST API
+
+---
+
+🏗️ Application Architecture
+
+                 👤 USER
+                    |
+                    v
+            🎨 REACT FRONTEND
+                    |
+                    | REST API
+                    v
+             ⚙️ FASTAPI BACKEND
+                    |
+          -----------------------
+          |          |          |
+          v          v          v
+       🐟 PONDS   🌡️ READINGS  🚨 ALERTS
+          |
+          v
+      🌊 AQUAWATCH
+
+---
+
+📁 Project Structure
+
+Aquawatch/
+│
 ├── backend/
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── schemas.py
 │   ├── requirements.txt
-│   └── init.sql
+│   └── Python application files
 │
 ├── frontend/
 │   ├── public/
 │   ├── src/
-│   ├── package.json
-│   └── package-lock.json
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── context/
+│   │   ├── pages/
+│   │   └── utils/
+│   └── package.json
 │
-├── .gitignore
 └── README.md
 
-Installation and Setup
+---
 
-Prerequisites
+💻 Installation & Setup
 
-Make sure the following are installed:
-
-Python 3.x
-
-Node.js
-
-npm
-
-Git
-
-VS Code
-
-
-Step 1: Clone the Repository
+1️⃣ Clone the Repository
 
 git clone https://github.com/Tejaswinikandulapati/Aquawatch.git
 cd Aquawatch
 
-Step 2: Backend Setup
-
-Open the terminal and run:
+2️⃣ Backend Setup
 
 cd backend
-
-Install Python dependencies:
-
 pip install -r requirements.txt
 
-Install PyMySQL if required:
+Run the backend using the configured Uvicorn application entry point.
 
-python -m pip install PyMySQL
+3️⃣ Frontend Setup
 
-Start the FastAPI backend:
-
-uvicorn main:app --reload
-
-Backend URL:
-
-http://127.0.0.1:8000
-
-FastAPI documentation:
-
-http://127.0.0.1:8000/docs
-
-Step 3: Frontend Setup
-
-Open another terminal and go to the frontend folder:
+Open another terminal:
 
 cd frontend
-
-Install frontend dependencies:
-
 npm install
+
+Configure the backend API URL:
+
+REACT_APP_API_URL=http://localhost:8000/api
 
 Start the React application:
 
 npm start
 
-Frontend URL:
+---
 
-http://localhost:3000
+☁️ Deployment
 
-Step 4: Run the Application
+AquaWatch is deployed using Render.
 
-Keep both terminals running:
+Component| Hosting
+🎨 Frontend| Render Static Site
+⚙️ Backend| Render Web Service
+🐙 Source Code| GitHub
 
-Backend  → http://127.0.0.1:8000
-Frontend → http://localhost:3000
+The frontend communicates with the backend through an environment-configured API URL.
 
-Open the frontend URL in your browser to use AquaWatch.
+---
 
-API Endpoints
+🎯 Project Highlights
 
-The frontend communicates with the FastAPI backend using REST APIs.
+- 🌊 Developed a full-stack aquaculture management application.
+- 🐟 Implemented pond management features.
+- 💧 Integrated water quality monitoring information.
+- 🌡️ Displayed sensor readings.
+- 🍽️ Maintained feeding activity records.
+- 🚨 Implemented pond-related alerts.
+- 🔗 Connected React frontend with FastAPI backend.
+- ☁️ Deployed the application online using Render.
 
-/api/ponds
-/api/readings
-/api/alerts
-/api/feeding-logs
-/api/dashboard-summary
-/api/simulate/{pond_id}
-/api/alerts/{alert_id}/resolve
+---
 
-Dashboard
+🔮 Future Enhancements
 
-The dashboard displays:
+- 📡 Real-time IoT sensor integration.
+- 🤖 AI-based water quality prediction.
+- 📱 Mobile-friendly monitoring experience.
+- 📊 Advanced analytics and visual reports.
+- 🔔 Automated notifications and alerts.
 
-Total Ponds
+---
 
-Active Alerts
+👩‍💻 About the Developer
 
-Average Temperature
+Tejaswini Kandulapati
 
-Dissolved Oxygen
+🎓 MCA Graduate
+💻 Aspiring Software Developer
+🐍 Interested in Python Development and Full-Stack Technologies.
 
-pH Level
+🔗 GitHub: "Tejaswini Kandulapati" (https://github.com/Tejaswinikandulapati)
 
-Water Quality Score
+---
 
-Temperature Trend
-
-pH Trend
-
-Dissolved Oxygen Trend
-
-Weekly Feeding Analysis
-
-Pond Overview
-
-Weather Information
-
-Environmental Summary
-
-
-Water Quality Monitoring
-
-AquaWatch monitors important water-quality parameters such as:
-
-Temperature
-
-pH
-
-Dissolved Oxygen
-
-Ammonia
-
-
-This helps users understand pond conditions and identify potential problems.
-
-Alert Management
-
-The system displays active alerts when important pond or water-quality conditions require attention. Users can view and resolve alerts through the application.
-
-Feeding Management
-
-The feeding module allows users to view feeding records and analyze feeding activities.
-
-Analytics
-
-The system provides charts and trends to help users understand aquaculture data and make better management decisions.
-
-Objective
-
-The main objective of AquaWatch is to provide a simple, centralized, and user-friendly platform for managing aquaculture operations. It reduces manual monitoring and helps fish farmers make better decisions using digital data.
-
-Benefits
-
-Easy pond monitoring
-
-Centralized aquaculture information
-
-Better water-quality management
-
-Quick identification of problems
-
-Easy feeding management
-
-Visual data analysis
-
-Reduced manual work
-
-Better decision making
-
-
-Future Enhancements
-
-IoT sensor integration
-
-Real-time sensor monitoring
-
-Mobile application
-
-AI-based fish health prediction
-
-Cloud deployment
-
-Advanced analytics
-
-Email and SMS notifications
-
-Automated feeding system
-
-
-Project Information
-
-Project Name: AquaWatch – Smart Aquaculture Management System
-
-Project Type: Web-Based Application
-
-Frontend: React.js
-
-Backend: FastAPI
-
-Database: SQLite
-
-Programming Languages: Python and JavaScript
-
-Conclusion
-
-AquaWatch provides a modern and user-friendly solution for smart aquaculture management. It combines pond monitoring, water-quality analysis, feeding management, alerts, analytics, and reporting into one centralized platform, helping aquaculture farmers monitor their operations efficiently and make better decisions.
+<p align="center">
+  <h3 align="center">🌊 AquaWatch</h3>
+  <strong>🐟 Smarter Pond Monitoring. Better Aquaculture Management.</strong>
+  <br/>
+  <em>Built with passion for technology and innovation.</em>
+</p>
