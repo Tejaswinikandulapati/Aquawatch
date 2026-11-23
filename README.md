@@ -20,7 +20,7 @@ The platform helps users monitor pond information, track water quality readings,
 
 🚀 Live Application
 
-🌐 Live Demo: "Open AquaWatch" (ADD_YOUR_FRONTEND_URL_HERE)
+🌐 Live Demo: "Open AquaWatch" (https://aquawatch-frontend-o7cr.onrender.com)
 
 🔗 GitHub Repository: "View Source Code" (https://github.com/Tejaswinikandulapati/Aquawatch)
 
